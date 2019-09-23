@@ -1,0 +1,10 @@
+---
+- name: create pool members
+  bigip_pool_member:
+    provider: "{{ provider }}"
+    state: "present"
+    name: "{{ item.name }}"
+    host: "{{ item.host | default(item.name) }}"
+    port: "{{ item.port }}"
+    pool: "{{ pool_member.name }}"
+  loop: "{{ pool_member.members }}"

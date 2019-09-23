@@ -1,0 +1,8 @@
+---
+# handlers file for f5_ltm
+- name: restart f5_ltm
+  service:
+    name: "{{ f5_ltm_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"

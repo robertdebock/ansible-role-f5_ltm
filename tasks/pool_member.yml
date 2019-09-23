@@ -9,3 +9,4 @@
     pool: "{{ pool_member.name }}"
     partition: "{{ f5_ltm_partition }}"
   loop: "{{ pool_member.members }}"
+  delegate_to: localhost

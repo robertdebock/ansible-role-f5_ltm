@@ -10,6 +10,7 @@
 #   validate_certs: no
 
 # General settings for the F5 LTM.
+f5_ltm_partition: Common
 f5_ltm_hostname: f5.example.com
 f5_ltm_timezone: "Europe/Amsterdam"
 f5_ltm_ntp_servers:

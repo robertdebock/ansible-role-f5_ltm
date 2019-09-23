@@ -19,6 +19,7 @@
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     host: "{{ item.host }}"
+    partition: "{{ f5_ltm_partition }}"
   loop: "{{ f5_ltm_nodes }}"
   when:
     - f5_ltm_nodes is defined
@@ -30,6 +31,7 @@
     lb_method: "{{ item.lb_method }}"
     monitors: "{{ item.monitors }}"
     monitor_type: "{{ item.monitor_type }}"
+    partition: "{{ f5_ltm_partition }}"
   loop: "{{ f5_ltm_pools }}"
   when:
     - f5_ltm_pools is defined
@@ -52,6 +54,7 @@
     all_profiles: "{{ item.all_profiles }}"
     pool: "{{ item.pool }}"
     snat: "{{ item.snat }}"
+    partition: "{{ f5_ltm_partition }}"
   loop: "{{ f5_ltm_virtual_servers }}"
   when:
     - f5_ltm_virtual_servers is defined

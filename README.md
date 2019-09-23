@@ -52,11 +52,12 @@ These variables are set in `defaults/main.yml`:
 #   validate_certs: no
 
 # General settings for the F5 LTM.
+f5_ltm_partition: Common
 f5_ltm_hostname: f5.example.com
+f5_ltm_timezone: "Europe/Amsterdam"
 f5_ltm_ntp_servers:
   - 1.1.1.1
   - 8.8.8.8
-f5_ltm_timezone: "Europe/Amsterdam"
 
 # The list of nodes.
 # f5_ltm_nodes:

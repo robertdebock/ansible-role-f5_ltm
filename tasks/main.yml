@@ -1,5 +1,19 @@
 ---
 # tasks file for f5_ltm
+- name: set hostname
+  bigip_hostname:
+    hostname: "{{ f5_ltm_hostname }}"
+  when:
+    - f5_ltm_hostname is defined
+
+- name: set timezone
+  bigip_device_ntp:
+    timezone: "{{ f5_ltm_timezone | default(omit) }}"
+    ntp_servers: "{{ f5_ltm_ntp_servers | default(omit) }}"
+  when:
+    - f5_ltm_timezone is defined or
+      f5_ltm_ntp_servers is defined
+
 - name: create nodes
   bigip_node:
     provider: "{{ f5_ltm_provider }}"

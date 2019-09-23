@@ -50,21 +50,28 @@ These variables are set in `defaults/main.yml`:
 #   password: password
 #   server_port: 8443
 #   validate_certs: no
-#
+
+# General settings for the F5 LTM.
+f5_ltm_hostname: f5.example.com
+f5_ltm_ntp_servers:
+  - 1.1.1.1
+  - 8.8.8.8
+f5_ltm_timezone: "Europe/Amsterdam"
+
 # The list of nodes.
 # f5_ltm_nodes:
 #   - name: node1.example.com
 #     host: 192.168.1.1
 #   - name: node2.example.com
 #     host: 192.168.1.2
-#
+
 # The list of pools.
 # f5_ltm_pools:
 #   - name: pool1.example.com
 #     lb_method: http_pool
 #     monitors: /Common/http
 #     monitor_type: and_list
-#
+
 # The list of pools and their members.
 # f5_ltm_pool_members:
 #   - name: pool1.example.com
@@ -73,7 +80,7 @@ These variables are set in `defaults/main.yml`:
 #         port: 80
 #       - name: node2.example.com
 #         port: 80
-#
+
 # The list of virtual_servers.
 # f5_ltm_virtual_servers:
 #   - name: virtual_server1.example.com

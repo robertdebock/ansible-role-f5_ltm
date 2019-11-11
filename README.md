@@ -35,66 +35,6 @@ The machine you are running this on, may need to be prepared.
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
-Role Variables
---------------
-
-These variables are set in `defaults/main.yml`:
-```yaml
----
-# defaults file for f5_ltm
-
-# Connection details for the F5 LTM.
-# f5_ltm_provider:
-#   server: 192.168.1.254
-#   user: root
-#   password: password
-#   server_port: 8443
-#   validate_certs: no
-
-# General settings for the F5 LTM.
-f5_ltm_partition: Common
-f5_ltm_hostname: f5.example.com
-f5_ltm_timezone: "Europe/Amsterdam"
-f5_ltm_ntp_servers:
-  - 1.1.1.1
-  - 8.8.8.8
-
-# The list of nodes.
-# f5_ltm_nodes:
-#   - name: node1.example.com
-#     host: 192.168.1.1
-#   - name: node2.example.com
-#     host: 192.168.1.2
-
-# The list of pools.
-# f5_ltm_pools:
-#   - name: pool1.example.com
-#     lb_method: http_pool
-#     monitors: /Common/http
-#     monitor_type: and_list
-
-# The list of pools and their members.
-# f5_ltm_pool_members:
-#   - name: pool1.example.com
-#     members:
-#       - name: node1.example.com
-#         port: 80
-#       - name: node2.example.com
-#         port: 80
-
-# The list of virtual_servers.
-# f5_ltm_virtual_servers:
-#   - name: virtual_server1.example.com
-#     pool: pool1.example.com
-#     destination: 192.168.1.254
-#     port: 443
-#     enable_vlans: all
-#     all_profiles:
-#       - http
-#       - clientssl
-#       - oneconnect
-#     snat: Automap
-```
 
 Requirements
 ------------
@@ -141,11 +81,9 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 This role has been tested on these Ansible versions:
 
-- ansible~=2.8
-- ansible~=2.9
+- ansible>=2.8, <2.9
+- ansible>=2.9
 - git+https://github.com/ansible/ansible.git@devel
-
-The indicator '\~=' means [compatible with](https://www.python.org/dev/peps/pep-0440/#compatible-release). For example 'ansible\~=2.8' would pick the latest ansible-2.8, for example ansible-2.8.6.
 
 
 

@@ -39,6 +39,5 @@ galaxy_info:
     - f5ltm
     - archlinux
     - centos
-    - rhel
 
 dependencies: []

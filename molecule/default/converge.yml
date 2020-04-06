@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - ansible-role-f5_ltm
+    - role: ansible-role-f5_ltm

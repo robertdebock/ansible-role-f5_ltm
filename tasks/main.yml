@@ -3,17 +3,21 @@
 - name: set hostname
   bigip_hostname:
     hostname: "{{ f5_ltm_hostname }}"
+    provider: "{{ f5_ltm_provider }}"
   when:
     - f5_ltm_hostname is defined
+    - f5_ltm_provider is defined
   delegate_to: localhost
 
 - name: set timezone
   bigip_device_ntp:
     timezone: "{{ f5_ltm_timezone | default(omit) }}"
     ntp_servers: "{{ f5_ltm_ntp_servers | default(omit) }}"
+    provider: "{{ f5_ltm_provider }}"
   when:
     - f5_ltm_timezone is defined or
       f5_ltm_ntp_servers is defined
+    - f5_ltm_provider is defined
   delegate_to: localhost
 
 - name: create nodes
@@ -25,11 +29,12 @@
   loop: "{{ f5_ltm_nodes }}"
   when:
     - f5_ltm_nodes is defined
+    - f5_ltm_provider is defined
   delegate_to: localhost
 
 - name: create pools
   bigip_pool:
-    provider: "{{ provider }}"
+    provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     lb_method: "{{ item.lb_method }}"
     monitors: "{{ item.monitors }}"
@@ -38,6 +43,8 @@
   loop: "{{ f5_ltm_pools }}"
   when:
     - f5_ltm_pools is defined
+    - ft_ltm_partition
+    - f5_ltm_provider is defined
   delegate_to: localhost
 
 - name: include pool_member.yml
@@ -49,7 +56,7 @@
     - f5_ltm_pool_members is defined
   delegate_to: localhost
 
-- name: ADD VIRTUAL SERVER
+- name: add virtual server
   bigip_virtual_server:
     provider: "{{ provider }}"
     name: "{{ item.name }}"
@@ -63,4 +70,5 @@
   loop: "{{ f5_ltm_virtual_servers }}"
   when:
     - f5_ltm_virtual_servers is defined
+    - f5_ltm_provider is defined
   delegate_to: localhost

@@ -2,9 +2,9 @@
 
 Configure an F5 LTMs nodes, pool, pool members and virtual servers.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-f5_ltm.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-f5_ltm)|[![github](https://github.com/robertdebock/ansible-role-f5_ltm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/actions)|[![quality](https://img.shields.io/ansible/quality/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![downloads](https://img.shields.io/ansible/role/d/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-f5_ltm.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-f5_ltm)|[![github](https://github.com/robertdebock/ansible-role-f5_ltm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/actions)|[![quality](https://img.shields.io/ansible/quality/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![downloads](https://img.shields.io/ansible/role/d/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-f5_ltm.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/releases/)|
 
 ## [Example Playbook](#example-playbook)
 

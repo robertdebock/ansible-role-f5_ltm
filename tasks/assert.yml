@@ -96,20 +96,22 @@
 - name: test if f5_ltm_pool_members is set correctly
   assert:
     that:
-      - f5_ltm_pool_members is defined
       - f5_ltm_pool_members | length > 0
       - f5_ltm_pool_members is iterable
+  when:
+    - f5_ltm_pool_members is defined
 
 - name: test if item in f5_ltm_pool_members is set correctly
   assert:
     that:
+      - item.name is defined
       - item.name | length > 0
       - item.member is defined
       - item.member | length > 0
       - item.member is iterable
   loop: "{{ f5_ltm_pool_members }}"
   when:
-    - item.name is defined
+    - f5_ltm_pool_members is defined
 
 - name: test if f5_ltm_virtual_servers is set correctly
   assert:

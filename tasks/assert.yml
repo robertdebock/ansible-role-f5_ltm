@@ -65,6 +65,7 @@
       - item.name | length > 0
       - item.host is defined
       - item.host | length > 0
+    quiet: yes
   loop: "{{ f5_ltm_nodes }}"
   when:
     - f5_ltm_nodes is defined
@@ -89,6 +90,7 @@
       - item.monitor_type is defined
       - item.monitor_type | length > 0
       - item.monitor_type in ["and_list", "single", "m_of_n"]
+    quiet: yes
   loop: "{{ f5_ltm_pools }}"
   when:
     - f5_ltm_pools is defined
@@ -109,6 +111,7 @@
       - item.member is defined
       - item.member | length > 0
       - item.member is iterable
+    quiet: yes
   loop: "{{ f5_ltm_pool_members }}"
   when:
     - f5_ltm_pool_members is defined

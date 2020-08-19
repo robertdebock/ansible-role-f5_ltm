@@ -3,6 +3,7 @@
   assert:
     that:
       - f5_ltm_provider | length > 0
+    quiet: yes
   when:
     - f5_ltm_provider is defined
 
@@ -22,6 +23,7 @@
       - f5_ltm_provider.validate_certs is defined
       - f5_ltm_provider.validate_certs | length > 0
       - f5_ltm_provider.validate_certs | type_debug == "bool"
+    quiet: yes
   when:
     - f5_ltm_provider is defined
 
@@ -30,18 +32,21 @@
     that:
       - f5_ltm_partition is defined
       - f5_ltm_partition | length > 0
+    quiet: yes
 
 - name: test if f5_ltm_hostname is set correctly
   assert:
     that:
       - f5_ltm_hostname is defined
       - f5_ltm_hostname | length > 0
+    quiet: yes
 
 - name: test if f5_ltm_timezone is set correctly
   assert:
     that:
       - f5_ltm_timezone is defined
       - f5_ltm_timezone | length > 0
+    quiet: yes
 
 - name: test if f5_ltm_ntp_servers is set correctly
   assert:
@@ -49,12 +54,14 @@
       - f5_ltm_ntp_servers is defined
       - f5_ltm_ntp_servers | length > 0
       - f5_ltm_ntp_servers is iterable
+    quiet: yes
 
 - name: test if f5_ltm_nodes is set correctly
   assert:
     that:
       - f5_ltm_nodes | length > 0
       - f5_ltm_nodes is iterable
+    quiet: yes
   when:
     - f5_ltm_nodes is defined
 
@@ -77,6 +84,7 @@
     that:
       - f5_ltm_pools | length > 0
       - f5_ltm_pools is iterable
+    quiet: yes
   when:
     - f5_ltm_pools is defined
 
@@ -104,6 +112,7 @@
     that:
       - f5_ltm_pool_members | length > 0
       - f5_ltm_pool_members is iterable
+    quiet: yes
   when:
     - f5_ltm_pool_members is defined
 
@@ -127,6 +136,7 @@
     that:
       - f5_ltm_virtual_servers | length > 0
       - f5_ltm_virtual_servers is iterable
+    quiet: yes
   when:
     - f5_ltm_virtual_servers is defined
 
@@ -150,5 +160,6 @@
       - item.snat is defined
       - item.snat | length > 0
       - item.snap in ["dhcp", "reject", "internal", "none", "automap"]
+    quiet: yes
   when:
     - f5_ltm_virtual_servers is defined

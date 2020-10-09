@@ -2,6 +2,7 @@
 # tasks file for f5_ltm
 - name: include assert.yml
   include_tasks: assert.yml
+  run_once: yes
 
 - name: set hostname
   bigip_hostname:

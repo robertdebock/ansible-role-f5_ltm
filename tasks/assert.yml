@@ -99,7 +99,7 @@
       - item.monitors | length > 0
       - item.monitor_type is defined
       - item.monitor_type | length > 0
-      - item.monitor_type in ["and_list", "single", "m_of_n"]
+      - item.monitor_type in [ "and_list", "single", "m_of_n" ]
     quiet: yes
   loop: "{{ f5_ltm_pools }}"
   loop_control:
@@ -159,7 +159,7 @@
       - item.all_profiles is iterable
       - item.snat is defined
       - item.snat | length > 0
-      - item.snap in ["dhcp", "reject", "internal", "none", "automap"]
+      - item.snap in [ "dhcp", "reject", "internal", "none", "automap" ]
     quiet: yes
   when:
     - f5_ltm_virtual_servers is defined

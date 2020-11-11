@@ -17,7 +17,7 @@
       - f5_ltm_provider.password is defined
       - f5_ltm_provider.password | length > 0
       - f5_ltm_provider.port is defined
-      - f5_ltm_provider.port | int
+      - f5_ltm_provider.port is number
       - f5_ltm_provider.port | int > 0
       - f5_ltm_provider.port | int < 65536
       - f5_ltm_provider.validate_certs is defined
@@ -149,7 +149,7 @@
       - item.pool | length > 0
       - item.destination is defined
       - item.destination | length > 0
-      - item.port | int
+      - item.port is number
       - item.port | int > 0
       - item.port | int < 65536
       - item.enable_vlans is defined

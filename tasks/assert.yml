@@ -2,7 +2,6 @@
 - name: test if f5_ltm_provider is set correctly
   assert:
     that:
-      - f5_ltm_provider | length > 0
     quiet: yes
   when:
     - f5_ltm_provider is defined
@@ -11,17 +10,13 @@
   assert:
     that:
       - f5_ltm_provider.server is defined
-      - f5_ltm_provider.server | length > 0
       - f5_ltm_provider.user is defined
-      - f5_ltm_provider.user | length > 0
       - f5_ltm_provider.password is defined
-      - f5_ltm_provider.password | length > 0
       - f5_ltm_provider.port is defined
       - f5_ltm_provider.port is number
       - f5_ltm_provider.port | int > 0
       - f5_ltm_provider.port | int < 65536
       - f5_ltm_provider.validate_certs is defined
-      - f5_ltm_provider.validate_certs | length > 0
       - f5_ltm_provider.validate_certs is boolean
     quiet: yes
   when:
@@ -31,35 +26,30 @@
   assert:
     that:
       - f5_ltm_partition is defined
-      - f5_ltm_partition | length > 0
     quiet: yes
 
 - name: test if f5_ltm_hostname is set correctly
   assert:
     that:
       - f5_ltm_hostname is defined
-      - f5_ltm_hostname | length > 0
     quiet: yes
 
 - name: test if f5_ltm_timezone is set correctly
   assert:
     that:
       - f5_ltm_timezone is defined
-      - f5_ltm_timezone | length > 0
     quiet: yes
 
 - name: test if f5_ltm_ntp_servers is set correctly
   assert:
     that:
       - f5_ltm_ntp_servers is defined
-      - f5_ltm_ntp_servers | length > 0
       - f5_ltm_ntp_servers is iterable
     quiet: yes
 
 - name: test if f5_ltm_nodes is set correctly
   assert:
     that:
-      - f5_ltm_nodes | length > 0
       - f5_ltm_nodes is iterable
     quiet: yes
   when:
@@ -69,9 +59,7 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.host is defined
-      - item.host | length > 0
     quiet: yes
   loop: "{{ f5_ltm_nodes }}"
   loop_control:
@@ -82,7 +70,6 @@
 - name: test if f5_ltm_pools is set correctly
   assert:
     that:
-      - f5_ltm_pools | length > 0
       - f5_ltm_pools is iterable
     quiet: yes
   when:
@@ -92,13 +79,9 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.lb_method is defined
-      - item.lb_method | length > 0
       - item.monitors is defined
-      - item.monitors | length > 0
       - item.monitor_type is defined
-      - item.monitor_type | length > 0
       - item.monitor_type in [ "and_list", "single", "m_of_n" ]
     quiet: yes
   loop: "{{ f5_ltm_pools }}"
@@ -110,7 +93,6 @@
 - name: test if f5_ltm_pool_members is set correctly
   assert:
     that:
-      - f5_ltm_pool_members | length > 0
       - f5_ltm_pool_members is iterable
     quiet: yes
   when:
@@ -120,9 +102,7 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.member is defined
-      - item.member | length > 0
       - item.member is iterable
     quiet: yes
   loop: "{{ f5_ltm_pool_members }}"
@@ -134,7 +114,6 @@
 - name: test if f5_ltm_virtual_servers is set correctly
   assert:
     that:
-      - f5_ltm_virtual_servers | length > 0
       - f5_ltm_virtual_servers is iterable
     quiet: yes
   when:
@@ -144,21 +123,15 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.pool is defined
-      - item.pool | length > 0
       - item.destination is defined
-      - item.destination | length > 0
       - item.port is number
       - item.port | int > 0
       - item.port | int < 65536
       - item.enable_vlans is defined
-      - item.enable_vlans | length > 0
       - item.all_profiles is defined
-      - item.all_profiles | length > 0
       - item.all_profiles is iterable
       - item.snat is defined
-      - item.snat | length > 0
       - item.snap in [ "dhcp", "reject", "internal", "none", "automap" ]
     quiet: yes
   when:

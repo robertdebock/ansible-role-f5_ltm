@@ -14,8 +14,8 @@
       - f5_ltm_provider.password is defined
       - f5_ltm_provider.port is defined
       - f5_ltm_provider.port is number
-      - f5_ltm_provider.port | int > 0
-      - f5_ltm_provider.port | int < 65536
+      - f5_ltm_provider.port > 0
+      - f5_ltm_provider.port < 65536
       - f5_ltm_provider.validate_certs is defined
       - f5_ltm_provider.validate_certs is boolean
     quiet: yes
@@ -126,8 +126,8 @@
       - item.pool is defined
       - item.destination is defined
       - item.port is number
-      - item.port | int > 0
-      - item.port | int < 65536
+      - item.port > 0
+      - item.port < 65536
       - item.enable_vlans is defined
       - item.all_profiles is defined
       - item.all_profiles is iterable

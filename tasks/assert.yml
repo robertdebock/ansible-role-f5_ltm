@@ -1,11 +1,4 @@
 ---
-- name: test if f5_ltm_provider is set correctly
-  assert:
-    that:
-    quiet: yes
-  when:
-    - f5_ltm_provider is defined
-
 - name: test if item in f5_ltm_provider is set correctly
   assert:
     that:

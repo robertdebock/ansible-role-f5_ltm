@@ -22,7 +22,7 @@
       - f5_ltm_provider.port | int < 65536
       - f5_ltm_provider.validate_certs is defined
       - f5_ltm_provider.validate_certs | length > 0
-      - f5_ltm_provider.validate_certs | type_debug == "bool"
+      - f5_ltm_provider.validate_certs is boolean
     quiet: yes
   when:
     - f5_ltm_provider is defined

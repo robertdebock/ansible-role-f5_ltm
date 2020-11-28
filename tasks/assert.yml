@@ -8,7 +8,7 @@
       - f5_ltm_provider.user is defined
       - f5_ltm_provider.user is string
       - f5_ltm_provider.password is defined
-      - f5_ltm_provider.password is sting
+      - f5_ltm_provider.password is string
       - f5_ltm_provider.port is defined
       - f5_ltm_provider.port is number
       - f5_ltm_provider.port > 0
@@ -30,7 +30,7 @@
   assert:
     that:
       - f5_ltm_hostname is defined
-      - f5_ltm_hostname is sting
+      - f5_ltm_hostname is string
     quiet: yes
 
 - name: test if f5_ltm_timezone is set correctly

@@ -48,7 +48,7 @@
   loop: "{{ f5_ltm_pools }}"
   when:
     - f5_ltm_pools is defined
-    - ft_ltm_partition
+    - ft_ltm_partition | bool
     - f5_ltm_provider is defined
   delegate_to: localhost
 

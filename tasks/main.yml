@@ -7,7 +7,7 @@
   delegate_to: localhost
 
 - name: set hostname
-  f5networks.f5_modules.hostname:
+  f5networks.f5_modules.bigip_hostname:
     hostname: "{{ f5_ltm_hostname }}"
     provider: "{{ f5_ltm_provider }}"
   when:
@@ -27,7 +27,7 @@
   delegate_to: localhost
 
 - name: create nodes
-  f5networks.f5_modules.node:
+  f5networks.f5_modules.bigip_node:
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     host: "{{ item.host }}"
@@ -39,7 +39,7 @@
   delegate_to: localhost
 
 - name: create pools
-  f5networks.f5_modules.pool:
+  f5networks.f5_modules.bigip_pool:
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     lb_method: "{{ item.lb_method }}"
@@ -63,7 +63,7 @@
   delegate_to: localhost
 
 - name: add virtual server
-  f5networks.f5_modules.virtual_server:
+  f5networks.f5_modules.bigip_virtual_server:
     provider: "{{ provider }}"
     name: "{{ item.name }}"
     destination: "{{ item.destination }}"

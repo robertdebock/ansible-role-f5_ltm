@@ -1,6 +1,6 @@
 ---
 - name: create pool members
-  bigip_pool_member:
+  f5networks.f5_modules.bigip_pool_member:
     provider: "{{ provider }}"
     state: "present"
     name: "{{ item.name }}"

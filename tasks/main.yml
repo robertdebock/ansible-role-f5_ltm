@@ -10,7 +10,7 @@
   delegate_to: localhost
 
 - name: set hostname
-  bigip_hostname:
+  f5networks.f5_modules.bigip_hostname:
     hostname: "{{ f5_ltm_hostname }}"
     provider: "{{ f5_ltm_provider }}"
   when:
@@ -19,7 +19,7 @@
   delegate_to: localhost
 
 - name: set timezone
-  bigip_device_ntp:
+  f5networks.f5_modules.bigip_device_ntp:
     timezone: "{{ f5_ltm_timezone | default(omit) }}"
     ntp_servers: "{{ f5_ltm_ntp_servers | default(omit) }}"
     provider: "{{ f5_ltm_provider }}"
@@ -30,7 +30,7 @@
   delegate_to: localhost
 
 - name: create nodes
-  bigip_node:
+  f5networks.f5_modules.bigip_node:
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     host: "{{ item.host }}"
@@ -42,7 +42,7 @@
   delegate_to: localhost
 
 - name: create pools
-  bigip_pool:
+  f5networks.f5_modules.bigip_pool:
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     lb_method: "{{ item.lb_method }}"
@@ -57,7 +57,7 @@
   delegate_to: localhost
 
 - name: include pool_member.yml
-  include: pool_member.yml
+  ansible.builtin.include: pool_member.yml
   loop_control:
     label: pool_member
     loop_var: pool_member
@@ -67,7 +67,7 @@
   delegate_to: localhost
 
 - name: add virtual server
-  bigip_virtual_server:
+  f5networks.f5_modules.bigip_virtual_server:
     provider: "{{ f5_ltm_provider }}"
     name: "{{ item.name }}"
     destination: "{{ item.destination }}"

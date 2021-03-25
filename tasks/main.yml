@@ -1,9 +1,6 @@
 ---
 # tasks file for f5_ltm
-# This file contains modifications contributed by Brandon Wittenburg
-# 1. In "create pools": modified ft_ltm_partition to f5_ltm_partition; modified evaluation from "bool" to "is defined"
-# 2. In "include pool_member.yml": added loop_var
-# 3. In "add virtual server": modified provider to f5_ltm_provider
+
 - name: include assert.yml
   import_tasks: assert.yml
   run_once: yes

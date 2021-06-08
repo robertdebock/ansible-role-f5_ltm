@@ -62,7 +62,6 @@
   loop: "{{ f5_ltm_pool_members }}"
   when:
     - f5_ltm_pool_members is defined
-  delegate_to: localhost
 
 - name: add virtual server
   f5networks.f5_modules.bigip_virtual_server:

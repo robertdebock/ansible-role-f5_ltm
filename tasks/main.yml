@@ -54,7 +54,8 @@
   delegate_to: localhost
 
 - name: include pool_member.yml
-  ansible.builtin.include: pool_member.yml
+  ansible.builtin.include_tasks:
+    file: pool_member.yml
   loop_control:
     label: pool_member
     loop_var: pool_member

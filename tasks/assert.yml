@@ -5,10 +5,13 @@
     that:
       - f5_ltm_provider.server is defined
       - f5_ltm_provider.server is string
+      - f5_ltm_provider.server is not none
       - f5_ltm_provider.user is defined
       - f5_ltm_provider.user is string
+      - f5_ltm_provider.user is not none
       - f5_ltm_provider.password is defined
       - f5_ltm_provider.password is string
+      - f5_ltm_provider.password is not none
       - f5_ltm_provider.server_port is defined
       - f5_ltm_provider.server_port is number
       - f5_ltm_provider.server_port > 0
@@ -24,6 +27,7 @@
     that:
       - f5_ltm_partition is defined
       - f5_ltm_partition is string
+      - f5_ltm_partition is not none
     quiet: yes
 
 - name: assert | Test if f5_ltm_hostname is set correctly
@@ -31,6 +35,7 @@
     that:
       - f5_ltm_hostname is defined
       - f5_ltm_hostname is string
+      - f5_ltm_hostname is not none
     quiet: yes
 
 - name: assert | Test if f5_ltm_timezone is set correctly
@@ -38,6 +43,7 @@
     that:
       - f5_ltm_timezone is defined
       - f5_ltm_timezone is string
+      - f5_ltm_timezone is not none
     quiet: yes
 
 - name: assert | Test if f5_ltm_ntp_servers is set correctly
@@ -60,8 +66,10 @@
     that:
       - item.name is defined
       - item.name is string
+      - item.name is not none
       - item.host is defined
       - item.host is string
+      - item.host is not none
     quiet: yes
   loop: "{{ f5_ltm_nodes }}"
   loop_control:
@@ -82,10 +90,13 @@
     that:
       - item.name is defined
       - item.name is string
+      - item.name is not none
       - item.lb_method is defined
       - item.lb_method is string
+      - item.lb_method is not none
       - item.monitors is defined
       - item.monitors is string
+      - item.monitors is not none
       - item.monitor_type is defined
       - item.monitor_type is string
       - item.monitor_type in [ "and_list", "single", "m_of_n" ]
@@ -109,6 +120,7 @@
     that:
       - item.name is defined
       - item.name is string
+      - item.name is not none
       - item.members is defined
       - item.members is iterable
     quiet: yes
@@ -133,8 +145,10 @@
       - item.name is string
       - item.pool is defined
       - item.pool is string
+      - item.pool is not none
       - item.destination is defined
       - item.destination is string
+      - item.destination is not none
       - item.port is number
       - item.port > 0
       - item.port < 65536

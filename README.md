@@ -2,9 +2,9 @@
 
 Configure an F5 LTMs nodes, pool, pool members and virtual servers.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-f5_ltm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-f5_ltm/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-f5_ltm)|[![quality](https://img.shields.io/ansible/quality/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![downloads](https://img.shields.io/ansible/role/d/43521)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-f5_ltm.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-f5_ltm/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-f5_ltm/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-f5_ltm)|[![downloads](https://img.shields.io/ansible/role/d/24493)](https://galaxy.ansible.com/robertdebock/f5_ltm)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-f5_ltm.svg)](https://github.com/robertdebock/ansible-role-f5_ltm/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -136,7 +136,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-f5_ltm/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-f5_ltm/issues).
 
 ## [License](#license)
 

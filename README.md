@@ -1,4 +1,4 @@
-# Ansible role [f5_ltm](#f5_ltm)
+# [Ansible role f5_ltm](#f5_ltm)
 
 Configure an F5 LTMs nodes, pool, pool members and virtual servers.
 

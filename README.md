@@ -1,5 +1,7 @@
 # [Ansible role f5_ltm](#f5_ltm)
 
+> THIS ROLE HAS BEEN ARCHIVED AS OF DEC 2023.
+
 Configure an F5 LTMs nodes, pool, pool members and virtual servers.
 
 |GitHub|GitLab|Downloads|Version|
